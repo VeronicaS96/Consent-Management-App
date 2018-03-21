@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Login</title>
+
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+        @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+
+
+        .body {
+            position: fixed;
+            overflow-y: scroll;
+            width: 100%;
+            top: -20px;
+            left: -20px;
+            right: -40px;
+            bottom: -40px;
+            width: auto;
+            height: auto;
+            background-image: url(http://www.solidbackgrounds.com/images/950x350/950x350-dark-red-solid-color-background.jpg);
+            background-size: cover;
+
+        }
+
+
+
+        .header {
+            position: absolute;
+            top: calc(20% - 35px);
+            left: calc(50% - 255px);
+
+        }
+
+        .header div {
+            float: left;
+            color: #fff;
+            font-family: 'Exo', sans-serif;
+            font-size: 50px;
+            font-weight: 300;
+        }
+
+        .header div span {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .footer{
+            position: absolute;
+            top: calc(100% - 35px);
+            left: calc(100% - 255px);
+
+        }
+
+        .footer div {
+            float: left;
+            color: #fff;
+            font-family: 'Exo', sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+        .footer div span {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .login {
+            position: absolute;
+            top: calc(50% - 75px);
+            left: calc(50% - 50px);
+            height: 150px;
+            width: 350px;
+            padding: 10px;
+
+        }
+
+        .login input[type=text] {
+            width: 250px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            color: #fff;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 4px;
+        }
+
+        .login input[type=password] {
+            width: 250px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            color: #fff;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 4px;
+            margin-top: 10px;
+        }
+
+        .login input[type=button] {
+            width: 260px;
+            height: 35px;
+            background: #fff;
+            border: 1px solid #fff;
+            cursor: pointer;
+            border-radius: 2px;
+            color: #a18d6c;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 6px;
+            margin-top: 10px;
+        }
+
+        .login div {
+            color: rgb(255, 255, 255) !important;
+            font-family: 'Exo', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .login input[type=button]:hover {
+            opacity: 0.8;
+        }
+
+        .login input[type=button]:active {
+            opacity: 0.6;
+        }
+
+        .login input[type=text]:focus {
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .login input[type=password]:focus {
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .login input[type=button]:focus {
+            outline: none;
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        ::-moz-input-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+
+
+
+</head>
+
+<body oncontextmenu="return false">
+
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+        <div>
+            <span>Pryv Consent Management</span>
+        </div>
+    </div>
+    <br>
+    <form name="login">
+        <div class="login">
+            <input type="text" placeholder="Username" name="userid">
+            <br>
+            <input type="password" placeholder="Password" name="pswrd">
+            <br>
+            <input type="button" onclick="check(this.form)" value="Login" />
+            <div>
+                 <p id="errormessage"></p> 
+            </div>
+        </div>
+
+    </form>
+
+        <footer class="footer">
+            <div>
+                <span> © 2018 – Pryv</span>
+        </footer>
+
+    <script language="javascript">
+        function check(form) {
+                var message;
+                if (form.userid.value == "pryv" && form.pswrd.value == "1234") {
+                    message = "Logging in...";
+                    window.open("http://localhost:5000/account");
+                } else {
+                    message = "Incorrect Username or Password, Please try again!";
+                    //  alert("Incorrect Username or Password, Please try again!");
+                }
+                document.getElementById("errormessage").innerHTML = message;
+            }
+
+    </script>
+
+</body>
+
+</html>
