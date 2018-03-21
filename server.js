@@ -31,7 +31,7 @@ var db = new sqlite3.Database(
 
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(bodyParser()); 
+app.use(bodyParser.json());
 
 //app.use(express.static('login'))
 
